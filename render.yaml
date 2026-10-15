@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: painel-gerencial-vendas
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:server --workers 2 --bind 0.0.0.0:$PORT
